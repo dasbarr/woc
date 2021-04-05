@@ -102,7 +102,7 @@ end
 -- Discards combinator output.
 -- @param combinatorEntry Entry with combinator data.
 __modUtils.RemoveOutput = function(combinatorEntry)
-    combinatorEntry.outputPort.get_control_behavior().parameters = { parameters = {} }
+    combinatorEntry.outputPort.get_control_behavior().parameters = {}
     combinatorEntry.firstOutputSignalIndex = -1
     combinatorEntry.replacementSlotIndex = -1
     combinatorEntry.outputState = __constants.enums.OutputState.None
@@ -134,7 +134,7 @@ __modUtils.SetCombinatorOutput = function(outputPortControlBehaviour, sourceSign
         end
     end
     
-    outputPortControlBehaviour.parameters = { parameters = outputSignals }
+    outputPortControlBehaviour.parameters = outputSignals
 end
 
 -- Rotates combinator output - moves output 'window', hides one of previously shown signals and shows a new one.
